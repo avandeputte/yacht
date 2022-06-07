@@ -1,0 +1,81 @@
+[
+  {
+    "title": "Photostructure",
+    "name": "Photostructure",
+    "image": "photostructure/server:alpha",
+    "description": "",
+    "categories": [],
+    "platform": "linux",
+    "note": "",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      {
+        "WebUI": "1787:1787/tcp"
+      }
+    ],
+    "volumes": [
+      {
+        "container": "/photos",
+        "bind": "!photos"
+      },
+      {
+        "container": "/videos",
+        "bind": "!videos"
+      },
+      {
+        "container": "/ps/library",
+        "bind": "!PS_LIBRARY"
+      }
+    ],
+    "env": [
+      {
+        "name": "TZ",
+        "default": "America/New_York",
+        "description": "TZ",
+        "label": "TZ"
+      },
+      {
+        "name": "PS_WHO_TAGS",
+        "default": "[\"People\"]",
+        "description": "PS_WHO_TAGS",
+        "label": "PS_WHO_TAGS"
+      },
+      {
+        "name": "PS_KEYWORD_REPARENTING",
+        "default": "move",
+        "description": "PS_KEYWORD_REPARENTING",
+        "label": "PS_KEYWORD_REPARENTING"
+      },
+      {
+        "name": "PS_TAG_JSON_FACES",
+        "default": "false",
+        "description": "PS_TAG_JSON_FACES",
+        "label": "PS_TAG_JSON_FACES"
+      },
+      {
+        "name": "PS_TAG_FACE_REGIONS",
+        "default": "false",
+        "description": "PS_TAG_FACE_REGIONS",
+        "label": "PS_TAG_FACE_REGIONS"
+      },
+      {
+        "name": "PS_TAG_CAMERA",
+        "default": "false",
+        "description": "PS_TAG_CAMERA",
+        "label": "PS_TAG_CAMERA"
+      },
+      {
+        "name": "PS_FORCE_LOCAL_DB_REPLICA",
+        "default": "false",
+        "description": "PS_FORCE_LOCAL_DB_REPLICA",
+        "label": "PS_FORCE_LOCAL_DB_REPLICA"
+      }
+    ],
+    "command": [],
+    "devices": [],
+    "labels": [],
+    "sysctls": [],
+    "cap_add": [],
+    "logo": "https://photostructure.com/img/logo-txt-white.svg"
+  }
+]
